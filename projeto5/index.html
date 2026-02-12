@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agendinha</title>
+</head>
+<body>
+    <div class="containerHeader">
+        <h1>Agendinha com JavaScript</h1>
+    </div>
+    <div class="containerBody">
+        <div class="containerForm">
+            <form id="form">
+                <input type="text" id="inputTarefa" placeholder="Digite a tarefa">
+                <input type="date" id="inputData" placeholder="Data limite">
+                <button type="button" id="btnAdicionar" onclick="adicionarTarefa()">Adicionar</button>
+            </form>
+        </div>
+        <div class="containerTarefasPrincipal">
+        <div class="containerTarefas">
+            <h2>Tarefas Pendentes</h2>
+            <ul id="listaTarefas"></ul>
+        </div>
+        <div class="containerTarefasAtradas">
+            <h2>Tarefas Atrasadas</h2>
+            <ul id="listaTarefasAtrasadas"></ul>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+    .containerHeader {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .containerBody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        gap: 30px;
+    }
+    .containerForm {
+        flex: 1;
+        margin-right: 20px;
+    }
+    .containerTarefas, .containerTarefasAtradas {
+        flex: 1;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .containerTarefasPrincipal {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        gap: 10px;
+    }
+    </style>
+</body>
+</html>

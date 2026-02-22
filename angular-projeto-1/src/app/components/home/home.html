@@ -1,0 +1,19 @@
+<p>Olá mundo!</p>
+
+<!-- Com o attr da para criar um atributo -->
+<!-- Atributos que nem o class ou id -->
+<button [attr.aria-label]="idButton" (click)="submit($event)">Clique</button>
+
+@if(deveMostrarTitulo){
+<h1>Meu título</h1>
+}@else{
+<h1>Não foi verdadeiro</h1>
+}
+
+<button (click)="trocar()">Trocar</button>
+
+<!-- Se o array tiver varios objetos dentro dele 
+ tem como pegar um atributo do objet pelo track item-->
+@for(item of listItens; track item){
+<h1>{{ item }}</h1>
+}

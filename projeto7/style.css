@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(105, 105, 173);
+    color: white;
+    font: normal 20pt Arial;
+    padding: 30px;
+    
+}
+
+#area{
+    background-color:cadetblue ;
+    color: white;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.containerIdade, .escritosCima{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: cadetblue;
+    border-radius: 50px;
+}
+
+.idade, .escolha, .pesca1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pesca1 p{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(20, 87, 143);
+    border-radius: 20px;
+    gap: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="containerIdade">
+        <div class="escritosCima">
+            <div class="idade">
+                <p>Ano de Nascimento:</p>
+                <input type="text" id="ano">
+            </div>
+            <div class="escolha">
+                <p>Gênero:</p>
+                <input type="radio" name="sexo" value="homem" id="masc"> Homem
+                <input type="radio" name="sexo" value="mulher" id="fem"> Mulher
+            </div>
+            <input type="button" value="Verificar" onclick="verificar()">
+            <div class="identificando">
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificar(){
+            var anoInput = document.getElementById('ano');
+            var resultado = document.getElementById('resultado');
+            var anoNascimento = Number(anoInput.value);
+            var anoAtual = new Date().getFullYear();
+
+            if (!anoNascimento || anoNascimento > anoAtual || anoNascimento < 1900) {
+                resultado.innerHTML = 'Por favor, insira um ano válido.';
+                return;
+            }
+
+            var idade = anoAtual - anoNascimento;
+            var genero = '';
+
+            if (document.getElementById('masc').checked) {
+                genero = 'Homem';
+            } else if (document.getElementById('fem').checked) {
+                genero = 'Mulher';
+            } else {
+                resultado.innerHTML = 'Por favor, selecione um gênero.';
+                return;
+            }
+
+            if(idade < 10){
+                resultado.innerHTML = `Você é uma criança ${genero.toLowerCase()} de ${idade} anos!`;
+            } else if(idade <= 18){
+                resultado.innerHTML = `Você é um adolescente ${genero.toLowerCase()} de ${idade} anos!`;
+            } else if(idade < 50){
+                resultado.innerHTML = `Você é um adulto ${genero.toLowerCase()} de ${idade} anos!`;
+            } else{
+                resultado.innerHTML = `Você é um idoso ${genero.toLowerCase()} de ${idade} anos!`;
+            }
+        }
+    </script>
+
+</body>
+</html>

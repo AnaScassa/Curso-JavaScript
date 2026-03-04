@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aprendendo JS</title>
+</head>
+<body>
+
+    <p>Somando valores</p>
+
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+
+    <p id="resultado">Resultado...</p>
+    
+    <script>
+       
+        function somar(){
+             var a = window.document.getElementById('txtn1');
+                var b = window.document.getElementById('txtn2');
+                var c = window.document.getElementById('resultado');
+
+                var n1 = Number(a.value); // Pegando os valores dentro dos input
+                var n2 = Number(a.value);
+
+            var s = n1 + n2;
+            c.innerHTML = 'A soma entre ' + n1 + ' e ' + n2 + ' é ' + s; 
+        }
+    </script>
+    
+</body>
+</html>

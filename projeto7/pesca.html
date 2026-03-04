@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="containerIdade">
+        <div class="escritosCima">
+            <div class="idade">
+                <p>Jogo da pesca:</p>          
+                </div>
+                    <div class="pesca1">
+                        <p id="p1" data-value="0"></p> <p id="p2" data-value="0"></p> <p id="p3" data-value="0"></p> <p id="p4" data-value="0"></p>
+                    </div>
+                    <div class="pesca1">
+                        <p id="p5" data-value="0"></p> <p id="p6" data-value="0"></p> <p id="p7" data-value="0"></p> <p id="p8" data-value="0"></p>
+                    </div>
+                    <div class="pesca1">
+                         <p id="p9" data-value="0"></p> <p id="p10" data-value="0"></p> <p id="p11" data-value="0"></p> <p id="p12" data-value="0"></p>
+                    </div>
+                    <input type="button" value="Verificar" onclick="verificar()">
+            <div class="identificando">
+                <p id="resultado">Clique no Botão para começar</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       function verificar() {
+    const resultado = document.getElementById('resultado');
+    const aleatorio = Math.floor(Math.random() * 12) + 1;
+
+    for (let i = 1; i <= 12; i++) {
+        const p = document.getElementById(`p${i}`);
+        p.dataset.value = "0";
+        p.style.background = "lightgray";
+    }
+
+    document.getElementById(`p${aleatorio}`).dataset.value = "1";
+
+    for (let i = 1; i <= 12; i++) {
+        const p = document.getElementById(`p${i}`);
+
+        p.onclick = function () {
+            if (p.dataset.value === "1") {
+                p.style.background = "yellow";
+                resultado.innerText = "🎣 Você pescou!";
+            } else {
+                p.style.background = "purple";
+                resultado.innerText = "💧 Nada aqui...";
+            }
+        };
+    }
+}
+
+    </script>
+
+</body>
+</html>

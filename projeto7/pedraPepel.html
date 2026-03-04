@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="containerIdade">
+        <div class="escritosCima">
+            <div class="idade">
+                <p>Digite o número:</p>
+                    <input type="text" placeholder="ESCOLHA" list="faixa" id="ano">
+                    <datalist id="faixa">
+                        <option value="1">Pedra</option>
+                        <option value="2">Papel</option>
+                        <option value="3">Tesoura</option>
+                    </datalist>            
+                </div>
+            <input type="button" value="Verificar" onclick="verificar()">
+            <div class="identificando">
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificar() {
+            var anoInput = document.getElementById('ano');
+            var resultado = document.getElementById('resultado');
+            var numero = anoInput.value;
+
+            var robo = Math.floor(Math.random() * 3) + 1;
+            // 1 pedra 2 papel 3 tesoura
+
+            if(robo == 1 && numero == 1){
+                resultado.innerHTML = 'Empate!! Os dois escolheram Pedra';
+            } else if(robo == 2 && numero == 1){
+                resultado.innerHTML = 'Perder :( \n O robo escolheu papel';
+            } else if(robo == 3 && numero == 1){
+                resultado.innerHTML = 'Ganhouuu \n O robo escolheu tesoura';
+            }
+
+            if(robo == 1 && numero == 2){
+                resultado.innerHTML = 'Ganhouuu \n O robo escolheu Pedra';
+            } else if(robo == 2 && numero == 2){
+                resultado.innerHTML = 'Empate!! Os dois escolheram papel';
+            } else if(robo == 3 && numero == 2){
+                resultado.innerHTML = 'Perder :( \n O robo escolheu tesoura';
+            }
+
+            if(robo == 1 && numero == 3){
+                resultado.innerHTML = 'Perder :( \n O robo escolheu Pedra';
+            } else if(robo == 2 && numero == 3){
+                resultado.innerHTML = 'Ganhouuu \n O robo escolheu papel';
+            } else if(robo == 3 && numero == 3){
+                resultado.innerHTML = 'Empate!! Os dois escolheram tesoura';
+            }
+
+            if(numero < 1 || numero > 3){
+                resultado.innerHTML = 'USUARIO BURRO SÓ PODE ESCOLHER PEDRA PEPEL OU TESOURA >:(';
+            }
+        }
+    </script>
+
+</body>
+</html>

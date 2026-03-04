@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aprendendo JS</title>
+</head>
+<body>
+
+    <p>Olá mundo</p>
+    <p id="mediaa">teste testando</p>
+    
+    <script>
+    var n1 = Number(prompt("Insira primeira nota"));
+    var n2 = Number(prompt("Insira a segunda nota"));
+
+    var media = (n1 + n2)/2;
+     
+    alert('A média da nota é ' + media);
+
+    if(media >= 7){
+        alert('Aprovado');
+    } else {
+        alert('Reprovado');
+    }
+
+    var mediaa = document.getElementById('mediaa');
+    mediaa.style.background = 'red'
+
+    </script>
+    
+</body>
+</html>
